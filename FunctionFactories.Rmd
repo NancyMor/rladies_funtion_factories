@@ -275,7 +275,7 @@ counter_two <- new_counter()
 Cuando se ejecuta la función fabricada, `i <<- i + 1` modificará `i` en su entorno circundante. Debido a que las funciones fabricadas tienen entornos envolventes independientes, tienen recuentos independientes:
 
 
-```{r, out.width='60%', fig.align='center'}
+```{r, out.width='60%', fig.align='center', echo = FALSE}
 knitr::include_graphics('images/10.2.4 Image 4.png')
 ```
 
@@ -288,7 +288,7 @@ counter_two()
 
 ```
 
-```{r, out.width='60%', fig.align='center'}
+```{r, out.width='60%', fig.align='center',  echo = FALSE}
 knitr::include_graphics('images/10.2.4 Image 5.png')
 ```
 
@@ -350,20 +350,20 @@ Lea su documentación y experimente para descubrir qué hacen las funciones y qu
 
 ```
 
-4.- Cree una función que cree funciones que calculen el i- ésimo momento central de un vector numérico. Puede probarlo ejecutando el siguiente código:
+<!-- 4.- Cree una función que cree funciones que calculen el i- ésimo momento central de un vector numérico. Puede probarlo ejecutando el siguiente código: -->
 
-```{r p15, exercise=TRUE}
+<!-- ```{r p15, exercise=TRUE} -->
 
-# m1 <- moment(1)
-# m2 <- moment(2)
-# 
-# x <- runif(100)
-# stopifnot(all.equal(m1(x), 0))
-# stopifnot(all.equal(m2(x), var(x) * 99 / 100))
+<!-- # m1 <- moment(1) -->
+<!-- # m2 <- moment(2) -->
+<!-- #  -->
+<!-- # x <- runif(100) -->
+<!-- # stopifnot(all.equal(m1(x), 0)) -->
+<!-- # stopifnot(all.equal(m2(x), var(x) * 99 / 100)) -->
 
-```
+<!-- ``` -->
 
-5.- ¿Qé pasa si no usas un cierre? Haga predicciones, luego verifique con el código a continuación.
+4.- ¿Qé pasa si no usas un cierre? Haga predicciones, luego verifique con el código a continuación.
 
 ```{r p16, exercise=TRUE}
 
@@ -375,7 +375,7 @@ new_counter2 <- function() {
 
 ```
 
-6.- ¿Qué pasa si usas en `<-` lugar de `<<-` ? Haga predicciones, luego verifique con el código a continuación.
+5.- ¿Qué pasa si usas en `<-` lugar de `<<-` ? Haga predicciones, luego verifique con el código a continuación.
 
 ```{r p17, exercise=TRUE}
 
@@ -821,7 +821,7 @@ Incluso se puede generar una fábrica de funciones reemplazando `map()` con `map
 
 Una desventaja de la construcción actual es que debe anteponer cada llamada a función con `funs$`. Hay tres formas de eliminar esta sintaxis adicional:
 
- * For a very temporary effect, you can use with():
+ * Pra un efecto muy temporal, se puede usar `with()`:
 
 ```{r p52, exercise = TRUE}
 with(funs, root(100))
@@ -878,7 +878,6 @@ funs <- list(
 )
 
 attach(funs)
-
 mean <- function(x) stop("Hi!")
 detach(funs)
 
